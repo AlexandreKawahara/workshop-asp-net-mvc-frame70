@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesWebMvcFrame70.Data;
 
@@ -10,9 +11,11 @@ using SalesWebMvcFrame70.Data;
 namespace SalesWebMvcFrame70.Migrations
 {
     [DbContext(typeof(SalesWebMvcFrame70Context))]
-    partial class SalesWebMvcFrame70ContextModelSnapshot : ModelSnapshot
+    [Migration("20240905003706_OtherEntities")]
+    partial class OtherEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
