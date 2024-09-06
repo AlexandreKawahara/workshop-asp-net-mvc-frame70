@@ -17,7 +17,6 @@ namespace SalesWebMvcFrame70.Models
 
         public Seller()
         {
-
         }
 
         public Seller(int id, string name, string email, DateOnly birthDate, double baseSalary, Department department)

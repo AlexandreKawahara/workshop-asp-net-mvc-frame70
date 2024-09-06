@@ -9,7 +9,7 @@ namespace SalesWebMvcFrame70.Data
 {
     public class SalesWebMvcFrame70Context : DbContext
     {
-        public SalesWebMvcFrame70Context (DbContextOptions<SalesWebMvcFrame70Context> options)
+        public SalesWebMvcFrame70Context(DbContextOptions<SalesWebMvcFrame70Context> options)
             : base(options)
         {
         }
