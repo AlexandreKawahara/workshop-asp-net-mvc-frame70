@@ -2,8 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
-using SalesWebMvcFrame70.Data;
 using MySql.Data.MySqlClient;
+using SalesWebMvcFrame70.Data;
+using SalesWebMvcFrame70.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 string connectionString = builder.Configuration.GetConnectionString("SalesWebMvcFrame70Context");
@@ -12,7 +13,7 @@ builder.Services.AddDbContext<SalesWebMvcFrame70Context>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddScoped<SalesWebMvcFrame70Context>();
-
+builder.Services.AddScoped<SellerService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
