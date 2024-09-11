@@ -9,7 +9,7 @@ namespace SalesWebMvcFrame70.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public DateOnly BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public Double BaseSalary { get; set; }
 
         public Department Department { get; set; }
@@ -19,7 +19,7 @@ namespace SalesWebMvcFrame70.Models
         {
         }
 
-        public Seller(int id, string name, string email, DateOnly birthDate, double baseSalary, Department department)
+        public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
         {
             Id = id;
             Name = name;

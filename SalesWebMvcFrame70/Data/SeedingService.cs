@@ -30,12 +30,12 @@ namespace SalesWebMvcFrame70.Data
                 Department d3 = new(3, "Fashion");
                 Department d4 = new(4, "Books");
 
-                Seller s1 = new(1, "Bob Brown", "bob@gmail.com", new DateOnly(1998, 4, 21), 1000.0, d1);
-                Seller s2 = new(2, "Maria Green", "maria@gmail.com", new DateOnly(1979, 12, 31), 3500.0, d2);
-                Seller s3 = new(3, "Alex Grey", "alex@gmail.com", new DateOnly(1988, 1, 15), 2200.0, d1);
-                Seller s4 = new(4, "Martha Red", "martha@gmail.com", new DateOnly(1993, 11, 30), 3000.0, d4);
-                Seller s5 = new(5, "Donald Blue", "donald@gmail.com", new DateOnly(2000, 1, 9), 4000.0, d3);
-                Seller s6 = new(6, "Alex Pink", "alex@gmail.com", new DateOnly(1997, 3, 4), 3000.0, d2);
+                Seller s1 = new(1, "Bob Brown", "bob@gmail.com", new DateTime(1998, 4, 21), 1000.0, d1);
+                Seller s2 = new(2, "Maria Green", "maria@gmail.com", new DateTime(1979, 12, 31), 3500.0, d2);
+                Seller s3 = new(3, "Alex Grey", "alex@gmail.com", new DateTime(1988, 1, 15), 2200.0, d1);
+                Seller s4 = new(4, "Martha Red", "martha@gmail.com", new DateTime(1993, 11, 30), 3000.0, d4);
+                Seller s5 = new(5, "Donald Blue", "donald@gmail.com", new DateTime(2000, 1, 9), 4000.0, d3);
+                Seller s6 = new(6, "Alex Pink", "alex@gmail.com", new DateTime(1997, 3, 4), 3000.0, d2);
 
                 SalesRecord r1 = new(1, new DateTime(2018, 09, 25), 11000.0, SaleStatus.Billed, s1);
                 SalesRecord r2 = new(2, new DateTime(2018, 09, 4), 7000.0, SaleStatus.Billed, s5);
