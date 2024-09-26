@@ -5,6 +5,8 @@ using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
 using MySql.Data.MySqlClient;
 using SalesWebMvcFrame70.Data;
 using SalesWebMvcFrame70.Services;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 string connectionString = builder.Configuration.GetConnectionString("SalesWebMvcFrame70Context");
@@ -15,6 +17,15 @@ builder.Services.AddDbContext<SalesWebMvcFrame70Context>(options =>
 builder.Services.AddScoped<SalesWebMvcFrame70Context>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+
+var ptBR = new CultureInfo("pt-BR");
+var enUS = new CultureInfo("en-US");
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(enUS),
+    SupportedCultures = new List<CultureInfo> { enUS },
+    SupportedUICultures = new List<CultureInfo> { enUS }
+};
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

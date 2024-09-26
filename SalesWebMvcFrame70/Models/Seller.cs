@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using NuGet.Protocol.Core.Types;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalesWebMvcFrame70.Models
 {
@@ -8,8 +9,16 @@ namespace SalesWebMvcFrame70.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [Display(Name = "Birth Date")]
+        [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
+
+        [Display(Name = "Base Salary")]
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public Double BaseSalary { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
