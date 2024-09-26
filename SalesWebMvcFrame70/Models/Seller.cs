@@ -14,6 +14,7 @@ namespace SalesWebMvcFrame70.Models
         public string Email { get; set; }
 
         [Display(Name = "Birth Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
 
