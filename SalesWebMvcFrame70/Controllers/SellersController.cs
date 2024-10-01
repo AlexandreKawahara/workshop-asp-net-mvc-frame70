@@ -37,7 +37,7 @@ namespace SalesWebMvcFrame70.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Seller seller)
         {
-            //Alexandre: AULA OPERACAO ASSINCRONA USANDO TASK, AWAIT -- NAO FUNCIONA
+            //Alexandre: AULA OPERACAO ASSINCRONA USANDO TASK(ASYNC, AWAIT) -- NAO FUNCIONA
             //if (!ModelState.IsValid)
             //{
             //    var departments = await _departmentService.FindAllAsync();
@@ -68,8 +68,16 @@ namespace SalesWebMvcFrame70.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            await _sellerService.RemoveAsync(id);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _sellerService.RemoveAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+
+            catch (IntegrityException e) 
+            {
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -110,7 +118,7 @@ namespace SalesWebMvcFrame70.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Seller seller)
         {
-            //Alexandre: AULA OPERACAO ASSINCRONA USANDO TASK, AWAIT -- NAO FUNCIONA
+            //Alexandre: AULA OPERACAO ASSINCRONA USANDO TASK(ASYNC, AWAIT) -- NAO FUNCIONA
             //if (!ModelState.IsValid)
             //{
             //    var departments = await _departmentService.FindAllAsync();
