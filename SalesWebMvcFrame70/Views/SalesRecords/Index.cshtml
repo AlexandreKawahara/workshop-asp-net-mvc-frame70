@@ -1,0 +1,60 @@
+﻿﻿@{
+    ViewData["Title"] = "Sales Record";
+}
+<div>
+    <p>
+        <a asp-action="Create" class="btn btn-dark">Create New</a>
+    </p>
+</div>
+
+<h1 style="text-align:center; color:black">@ViewData["Title"]</h1>
+<div class="row justify-content-center">
+    <div class="col-sm-auto" style="margin: 40px">
+        <form class="form-horizontal" asp-action="SimpleSearch">
+            <fieldset>
+                <legend class="text-center">Simple Search</legend>
+                <div class="form-group">
+                    <label for="minDate" class="col-lg control-label">Min Date</label>
+                    <div class="col-log-10">
+                        <input type="date" name="minDate" class="form-control" style="width:auto" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maxDate" class="col-lg control-label">Max Date</label>
+                    <div class="col-log-10">
+                        <input type="date" name="maxDate" class="form-control" style="width:auto" />
+                    </div>
+                </div>
+                <div class="form-group; text-center">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary" style="margin-top: 15px">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-sm-auto" style="margin: 40px">
+        <form class="form-horizontal" asp-action="GroupingSearch">
+            <fieldset>
+                <legend class="text-center">Grouping Search</legend>
+                <div class="form-group">
+                    <label for="minDate" class="col-lg control-label">Min Date</label>
+                    <div class="col-log-10">
+                        <input type="date" name="minDate" class="form-control" style="width:auto" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maxDate" class="col-lg control-label">Max Date</label>
+                    <div class="col-log-10">
+                        <input type="date" name="maxDate" class="form-control" style="width:auto" />
+                    </div>
+                </div>
+                <div class="form-group; text-center">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary" style="margin-top: 15px">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
