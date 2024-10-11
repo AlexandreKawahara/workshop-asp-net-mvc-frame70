@@ -17,6 +17,7 @@ builder.Services.AddDbContext<SalesWebMvcFrame70Context>(options =>
 builder.Services.AddScoped<SalesWebMvcFrame70Context>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<SalesRecordService>();
 
 var ptBR = new CultureInfo("pt-BR");
 var enUS = new CultureInfo("en-US");
